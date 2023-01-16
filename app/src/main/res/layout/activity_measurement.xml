@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Measurement">
+
+    <TextView
+        android:id="@+id/tvMeasurement"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="Enter measurement"
+        app:layout_constraintBottom_toTopOf="@+id/etMeasurement"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etMeasurement"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Please enter measurement1 here"
+        app:layout_constraintBottom_toTopOf="@+id/btMeasubmit"
+        app:layout_constraintEnd_toEndOf="@+id/tvMeasurement"
+        app:layout_constraintStart_toStartOf="@+id/tvMeasurement"
+        app:layout_constraintTop_toBottomOf="@+id/tvMeasurement" />
+
+    <Button
+        android:id="@+id/btMeasubmit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="200dp"
+        android:text="Send"
+        android:onClick="OnSend"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/etMeasurement"
+        app:layout_constraintStart_toStartOf="@+id/etMeasurement"
+        app:layout_constraintTop_toBottomOf="@+id/etMeasurement" />
+</androidx.constraintlayout.widget.ConstraintLayout>
