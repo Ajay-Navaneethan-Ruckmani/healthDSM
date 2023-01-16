@@ -10,6 +10,13 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.biometric.BiometricManager;
+import androidx.biometric.BiometricPrompt;
+import java.util.concurrent.Executor;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,6 +26,11 @@ public class MainActivity extends AppCompatActivity {
     private EditText User;
     private EditText Pass;
     private Button Login;
+
+    private TextView textView;
+    private BiometricPrompt biometricPrompt;
+    private BiometricPrompt.PromptInfo promptInfo;
+    private Executor executor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,12 +62,17 @@ public class MainActivity extends AppCompatActivity {
             String id = mPreferences.getString("key", "");
             Log.e("validate", "id of sharedpref " + id);
 
-            Intent intent = new Intent(MainActivity.this, HomePage.class);
+            Intent intent = new Intent(MainActivity.this, MainActivity2.class);
             startActivity(intent);
+
+
+
+
             Log.e("validate", "inside if");
         }
-        //else {
-        //  Login.setEnabled(false);
-        //}
+        else {
+//          Login.setEnabled(false);
+            Toast.makeText(this, "Username and password do not match ", Toast.LENGTH_LONG).show();
+        }
     }
 }

@@ -12,6 +12,7 @@ public class HomePage extends AppCompatActivity {
     private Button Measurement;
     private Button History;
     private Button Education;
+    private Button logoutAppBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,5 +41,17 @@ public class HomePage extends AppCompatActivity {
                                        }
                                    }
         );
+
+        logoutAppBtn = findViewById(R.id.btn_logout);
+        logoutAppBtn.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+//                HomePage.this.finish();
+//                Intent intent = new Intent(HomePage.this, MainActivity.class);
+//                startActivity(intent);
+//                System.exit(0);
+                  finishAffinity();
+            }
+        });
+
     }
 }
