@@ -44,6 +44,15 @@ public class HomePage extends AppCompatActivity {
                                        }
                                    }
         );
+        Education.setOnClickListener(new View.OnClickListener() {
+                                       @Override
+                                       public void onClick(View v) {
+                                           Intent intent = new Intent(HomePage.this, Education.class);
+                                           startActivity(intent);
+
+                                       }
+                                   }
+        );
 
         connect = findViewById(R.id.conn);
         connect.setOnClickListener(new View.OnClickListener() {

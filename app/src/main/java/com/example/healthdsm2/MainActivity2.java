@@ -50,6 +50,7 @@ public class MainActivity2 extends AppCompatActivity {
             public void onAuthenticationFailed() {
                 super.onAuthenticationFailed();
                 Toast.makeText(MainActivity2.this,"Biometric not recognised", Toast.LENGTH_LONG).show();
+                finishAffinity();
                 textView.setText("failure");
             }
         });
