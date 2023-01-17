@@ -17,9 +17,9 @@ import java.util.concurrent.Executor;
 public class MainActivity2 extends AppCompatActivity {
 
     private TextView textView;
-    private BiometricPrompt biometricPrompt;
-    private BiometricPrompt.PromptInfo promptInfo;
-    private Executor executor;
+    private BiometricPrompt biometric_Prompt;
+    private BiometricPrompt.PromptInfo prompt_info;
+    private Executor exe;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,9 +27,9 @@ public class MainActivity2 extends AppCompatActivity {
         setContentView(R.layout.activity_main2);
 
         textView = findViewById(R.id.textView);
-        executor = ContextCompat.getMainExecutor(this);
+        exe = ContextCompat.getMainExecutor(this);
 
-        biometricPrompt = new BiometricPrompt(this, executor, new BiometricPrompt.AuthenticationCallback() {
+        biometric_Prompt = new BiometricPrompt(this, exe, new BiometricPrompt.AuthenticationCallback() {
             @Override
             public void onAuthenticationError(int errorCode, @NonNull CharSequence errString) {
                 super.onAuthenticationError(errorCode, errString);
@@ -54,7 +54,7 @@ public class MainActivity2 extends AppCompatActivity {
                 textView.setText("failure");
             }
         });
-        promptInfo = new BiometricPrompt.PromptInfo.Builder()
+        prompt_info = new BiometricPrompt.PromptInfo.Builder()
                 .setTitle("Please use any one biometric to authenticate")
                 .setNegativeButtonText("cancel") //can also use as a calling function
                 .setConfirmationRequired(false)
@@ -67,6 +67,6 @@ public class MainActivity2 extends AppCompatActivity {
             textView.setText(("Biometric is supported. Please wait for authenticator"));
             return;
         }
-        biometricPrompt.authenticate(promptInfo);
+        biometric_Prompt.authenticate(prompt_info);
     }
 }
