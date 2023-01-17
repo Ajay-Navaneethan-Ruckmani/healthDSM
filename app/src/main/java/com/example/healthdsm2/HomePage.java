@@ -69,8 +69,6 @@ public class HomePage extends AppCompatActivity {
 //                HomePage.this.finish();
                 Intent intent = new Intent(HomePage.this, MainActivity.class);
                 startActivity(intent);
-//                System.exit(0);
-//                  finishAffinity(); //exits the app
             }
         });
 

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">HealthDsm2</string>
+    <string name="hyperlink"><a href = "https://www.nhs.uk/conditions/coronavirus-covid-19/">COVID19</a></string>
 </resources>
