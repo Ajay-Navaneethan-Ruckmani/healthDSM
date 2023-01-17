@@ -33,7 +33,7 @@ public class MainActivity2 extends AppCompatActivity {
             @Override
             public void onAuthenticationError(int errorCode, @NonNull CharSequence errString) {
                 super.onAuthenticationError(errorCode, errString);
-                textView.setText("error biometric error");
+                textView.setText("error biometric not registered or not recognized");
             }
 
             @Override
