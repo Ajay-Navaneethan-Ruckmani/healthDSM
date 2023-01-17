@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.concurrent.Executor;
 
@@ -32,13 +33,14 @@ public class MainActivity2 extends AppCompatActivity {
             @Override
             public void onAuthenticationError(int errorCode, @NonNull CharSequence errString) {
                 super.onAuthenticationError(errorCode, errString);
-                textView.setText("error bio not registered");
+                textView.setText("error biometric not registered or not recognized");
             }
 
             @Override
             public void onAuthenticationSucceeded(@NonNull BiometricPrompt.AuthenticationResult result) {
                 super.onAuthenticationSucceeded(result);
                 textView.setText("success");
+                Toast.makeText(MainActivity2.this,"successful biometric authentication ", Toast.LENGTH_LONG).show();
                 Intent i = new Intent(MainActivity2.this, HomePage.class);
                 startActivity(i); //jump to this activity
 
@@ -47,8 +49,8 @@ public class MainActivity2 extends AppCompatActivity {
             @Override
             public void onAuthenticationFailed() {
                 super.onAuthenticationFailed();
+                Toast.makeText(MainActivity2.this,"Biometric not recognised", Toast.LENGTH_LONG).show();
                 textView.setText("failure");
-
             }
         });
         promptInfo = new BiometricPrompt.PromptInfo.Builder()
