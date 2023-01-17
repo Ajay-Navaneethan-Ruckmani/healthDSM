@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.bluetooth.BluetoothAdapter;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.biometric.BiometricManager;
@@ -37,9 +38,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         User = (EditText)findViewById(R.id.editUser);
         Pass = (EditText)findViewById(R.id.editPass);
         Login = (Button)findViewById(R.id.buttonLogin);
+
 
         Login.setOnClickListener(new View.OnClickListener() {
                                      @Override

@@ -2,6 +2,7 @@ package com.example.healthdsm2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -13,7 +14,9 @@ public class HomePage extends AppCompatActivity {
     private Button History;
     private Button Education;
     private Button logoutAppBtn;
+    private Button connect;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,14 +45,23 @@ public class HomePage extends AppCompatActivity {
                                    }
         );
 
-        logoutAppBtn = findViewById(R.id.btn_logout);
+        connect = findViewById(R.id.conn);
+        connect.setOnClickListener(new View.OnClickListener() {
+                                       @Override
+                                       public void onClick(View view) {
+                                           Intent intent = new Intent(HomePage.this, bluetooth.class);
+                                           startActivity(intent);
+                                       }
+                                   });
+
+                logoutAppBtn = findViewById(R.id.btn_logout);
         logoutAppBtn.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
 //                HomePage.this.finish();
 //                Intent intent = new Intent(HomePage.this, MainActivity.class);
 //                startActivity(intent);
 //                System.exit(0);
-                  finishAffinity();
+                  finishAffinity(); //exits the app
             }
         });
 
