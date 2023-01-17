@@ -58,10 +58,10 @@ public class HomePage extends AppCompatActivity {
         logoutAppBtn.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
 //                HomePage.this.finish();
-//                Intent intent = new Intent(HomePage.this, MainActivity.class);
-//                startActivity(intent);
+                Intent intent = new Intent(HomePage.this, MainActivity.class);
+                startActivity(intent);
 //                System.exit(0);
-                  finishAffinity(); //exits the app
+//                  finishAffinity(); //exits the app
             }
         });
 
