@@ -52,8 +52,8 @@ public class MainActivity2 extends AppCompatActivity {
             }
         });
         promptInfo = new BiometricPrompt.PromptInfo.Builder()
-                .setTitle("Progrmmer world authentication")
-                .setNegativeButtonText("cancel/use pasword ") //can also use as a calling function
+                .setTitle("Please use any one biometric to authenticate")
+                .setNegativeButtonText("cancel") //can also use as a calling function
                 .setConfirmationRequired(false)
                 .build();
     }
@@ -61,7 +61,7 @@ public class MainActivity2 extends AppCompatActivity {
     public void buttonAuthenticate(View view){
         BiometricManager biometricManager = BiometricManager.from(this);
         if( BiometricManager.BIOMETRIC_SUCCESS == 1){ //checks if biometric is present
-            textView.setText(("Biometric is supported. Please wait for authentication"));
+            textView.setText(("Biometric is supported. Please wait for authenticator"));
             return;
         }
         biometricPrompt.authenticate(promptInfo);
